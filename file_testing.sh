@@ -8,3 +8,22 @@
 # -g filename : true if file exists and is set-group-id
 # -k filename : Sticky bit
 # -L filename : Symbolic link
+# -O filename : True if exists and is owned by the effective user id
+# -r filename : Check if file is readable
+# -S filename : Check if file is socket
+# -s filename : Check if file is nonzero size
+# -u filename : Check if file set-ser-id bit is set
+# -w filename : Check if file is writable
+# -x filename : Check if file is executable
+
+file='./file'
+if [ -e $file ] ; then
+	echo "File exists"
+else 
+	echo "File does not exist"
+fi
+
+while [ ! -e myfile ] ; do
+	# sleep until file does exists/is created
+	sleep 1
+done
